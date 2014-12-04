@@ -63,12 +63,9 @@ EOF
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}
-mkdir -p %{buildroot}/usr/lib/systemd/system-preset/
 mkdir -p %{buildroot}/usr/share/gnome-background-properties/
 mkdir -p %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images
 install -m 644 SUSE-brand %{buildroot}%{_sysconfdir}/
-install -m 644 branding-BLINUX/systemd-preset/90-default-BLINUX.preset %{buildroot}/usr/lib/systemd/system-preset/
-install -m 644 branding-BLINUX/systemd-preset/99-default-disable.preset %{buildroot}/usr/lib/systemd/system-preset/
 install -m 444 branding-BLINUX/wallpapers/metadata.desktop %{buildroot}/usr/share/wallpapers/BLINUXdefault/metadata.desktop
 install -m 444 branding-BLINUX/wallpapers/1280x1024.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
 install -m 444 branding-BLINUX/wallpapers/1600x1200.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
