@@ -35,6 +35,7 @@ Source0:	branding-BLINUX.tgz
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 BuildArch:      noarch
 BuildRequires:  update-desktop-files
+Vendor:		Blinux
 
 %description
 BLINUX branding base package
@@ -48,6 +49,7 @@ Requires(postun): update-alternatives
 Provides:       wallpaper-branding = %{version}
 Conflicts:      otherproviders(wallpaper-branding)
 BuildArch:      noarch
+Vendor:		Blinux
 
 %description -n wallpaper-branding-BLINUX
 BLINUX %{version} defaults wallpapers
