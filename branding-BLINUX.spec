@@ -25,7 +25,7 @@
 
 Name:           branding-BLINUX
 Version:        2.0
-Release:        0
+Release:        1
 Summary:        BLINUX Brand File
 License:        BSD-2-Clause
 Provides:       branding
@@ -35,6 +35,7 @@ Source0:	branding-BLINUX.tgz
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 BuildArch:      noarch
 BuildRequires:  update-desktop-files
+Vendor:		Blinux
 
 %description
 BLINUX branding base package
@@ -48,6 +49,7 @@ Requires(postun): update-alternatives
 Provides:       wallpaper-branding = %{version}
 Conflicts:      otherproviders(wallpaper-branding)
 BuildArch:      noarch
+Vendor:		Blinux
 
 %description -n wallpaper-branding-BLINUX
 BLINUX %{version} defaults wallpapers
