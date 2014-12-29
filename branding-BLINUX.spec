@@ -25,7 +25,7 @@
 
 Name:           branding-BLINUX
 Version:        2.0
-Release:        0
+Release:        1
 Summary:        BLINUX Brand File
 License:        BSD-2-Clause
 Provides:       branding
