@@ -24,8 +24,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 Name:           branding-BLINUX
-Version:        2.0
-Release:        1
+Version:        3.0
+Release:        0
 Summary:        BLINUX Brand File
 License:        BSD-2-Clause
 Provides:       branding
@@ -97,5 +97,8 @@ fi
 /usr/share/wallpapers/
 
 %changelog
+* Mon Aug 03 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0
+- Update to 3.0
+
 * Wed Aug 06 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0
 - Package creation
