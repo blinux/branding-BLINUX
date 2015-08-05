@@ -28,13 +28,23 @@ Version:        3.0
 Release:        0
 Summary:        BLINUX Brand File
 License:        BSD-2-Clause
+
 Provides:       branding
 Conflicts:      otherproviders(branding)
-Url:            https://www.blinux.fr
-Source0:	branding-BLINUX.tgz
-Packager:       Emmanuel Vadot <elbarto@bocal.org>
-BuildArch:      noarch
+Supplements:	packageand(wallpaper:branding-BLINUX)
+
+Source0:	1280x1024.png
+Source1:	1600x1200.png
+Source2:	1920x1080.png
+Source3:	1920x1200.png
+Source4:	BLINUX-default.xml
+Source5:	metadata.desktop
+Source6:	wallpaper-branding-BLINUX.xml
 BuildRequires:  update-desktop-files
+BuildArch:      noarch
+
+Url:            https://www.blinux.fr
+Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Vendor:		Blinux
 
 %description
@@ -55,7 +65,6 @@ Vendor:		Blinux
 BLINUX %{version} defaults wallpapers
 
 %prep
-%setup -q -c
 
 %build
 cat >SUSE-brand <<EOF
@@ -68,14 +77,14 @@ mkdir -p %{buildroot}%{_sysconfdir}
 mkdir -p %{buildroot}/usr/share/gnome-background-properties/
 mkdir -p %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images
 install -m 644 SUSE-brand %{buildroot}%{_sysconfdir}/
-install -m 444 branding-BLINUX/wallpapers/metadata.desktop %{buildroot}/usr/share/wallpapers/BLINUXdefault/metadata.desktop
-install -m 444 branding-BLINUX/wallpapers/1280x1024.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
-install -m 444 branding-BLINUX/wallpapers/1600x1200.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
-install -m 444 branding-BLINUX/wallpapers/1920x1080.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
-install -m 444 branding-BLINUX/wallpapers/1920x1200.png %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
-install -m 444 branding-BLINUX/wallpapers/BLINUX-default.xml %{buildroot}/usr/share/wallpapers/
+install -m 444 %{SOURCE0} %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
+install -m 444 %{SOURCE1} %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
+install -m 444 %{SOURCE2} %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
+install -m 444 %{SOURCE3} %{buildroot}/usr/share/wallpapers/BLINUXdefault/contents/images/
+install -m 444 %{SOURCE4} %{buildroot}/usr/share/wallpapers/
+install -m 444 %{SOURCE5} %{buildroot}/usr/share/wallpapers/BLINUXdefault/metadata.desktop
+install -m 444 %{SOURCE6} %{buildroot}/usr/share/gnome-background-properties/
 ln -s /usr/share/wallpapers/BLINUX-default.xml %{buildroot}/usr/share/wallpapers/BLINUX-default-static.xml
-install -m 444 branding-BLINUX/wallpapers/wallpaper-branding-BLINUX.xml %{buildroot}/usr/share/gnome-background-properties/
 %suse_update_desktop_file %{buildroot}/usr/share/wallpapers/BLINUXdefault/metadata.desktop
 
 %post -n wallpaper-branding-BLINUX
@@ -93,6 +102,7 @@ fi
 %files -n wallpaper-branding-BLINUX
 %defattr(-,root,root)
 /usr/share/wallpapers/BLINUX-default.xml
+/usr/share/gnome-background-properties/
 /usr/share/gnome-background-properties/wallpaper-branding-BLINUX.xml
 /usr/share/wallpapers/
 
